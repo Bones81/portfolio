@@ -3,8 +3,16 @@ body {
   text-align: center;
 }
 
+header {
+  height: 40vh;
+  line-height: 40vh;
+}
+
 h1 {
-  font-size: 3em;
+  width: 80%;
+  font-size: 3.5em;
+  text-align: left;
+  padding-left: 15%;
 }
 
 h3 {
@@ -40,4 +48,43 @@ h4 {
 #bio-main img, #bio-main article {
   width: 45%;
   display: inline-block;
+}
+
+#resume-main {
+  max-height: 90vh;
+}
+
+#projects-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px auto;
+  width: 85vw;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.project-img, .project-description, .live-link, .github-link {
+  display: none;
+}
+
+.open-card > * {
+  display: inline-block;
+}
+
+footer {
+  padding: 1em;
+}
+
+footer > * {
+  text-align: right;
+  padding-right: 15%;
+}
+
+footer h3 {
+  font-size: 2em;
 }

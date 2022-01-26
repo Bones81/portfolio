@@ -28,3 +28,16 @@ h4 {
 .nav-link:hover {
   transform: scale(2);
 }
+
+.sub-page-nav .nav-link {
+  display: inline;
+}
+
+#bio-main {
+  width: 80%;
+  margin: 1em auto;
+}
+#bio-main img, #bio-main article {
+  width: 45%;
+  display: inline-block;
+}

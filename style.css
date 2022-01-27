@@ -1,30 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Red+Hat+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
   box-sizing: border-box;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-content: space-between;
+  background: radial-gradient(rgb(114, 170, 189), rgb(192, 192, 192))
 }
 
 header {
-  height: 25vh;
+  height: 20vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-content: center;
+  border-bottom: white solid 0.125em;
 }
 
 h1 {
-  width: 80%;
-  font-size: 2.75em;
-  text-align: left;
-  padding-left: 15%;
+  width: fit-content;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  /* text-align: left; */
+  /* padding-left: 15%; */
   text-shadow: darkblue 5px 2px 15px;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 0.75em;
 }
 
 h4 {
-  font-size: 1.125em;
+  font-size: 1em;
+  font-style: italic;
+  
+}
+
+nav, main, h4 {
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 header, nav, footer {
@@ -32,9 +49,16 @@ header, nav, footer {
   color: white;
 }
 
-nav {
-  
-  margin: 10px auto;
+.home-nav {
+  min-width: 40vw;
+  min-height: 40vh;
+  margin: auto;
+  padding: 0.5em;
+  border-radius: 20px;
+  border: rgb(238, 238, 238) solid 1px;
+  box-shadow: white 2px 2px 10px, white 2px -2px 10px, white -2px 2px 10px, white -2px -2px 10px;
+  display: grid;
+  place-items: center;
 }
 
 .nav-link {
@@ -50,8 +74,9 @@ nav {
 }
 
 .nav-link a {
-  color: white;
+  color: rgb(238, 238, 238);
   text-decoration: none;
+  text-shadow: white -1px 1px 20px;
 }
 
 .sub-page-nav {
@@ -129,26 +154,136 @@ main {
 }
 
 footer {
-  padding: 1em;
+  padding: 0.5em;
+  border-top: white solid 0.125em;
+
 }
 
 footer > * {
-  text-align: left;
-  padding-left: 15%;
+  text-align: center;
+  padding: 2px 0;
+  /* padding-left: 15%; */
 }
 
 footer h3 {
-  font-size: 2em;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5em;
   text-shadow: darkblue 5px 2px 15px;
 }
 
-@media (min-width: 480px) {
+
+@media (min-width: 275px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  footer h4 {
+    font-size: 0.75em;
+  }
+
+}
+
+@media (min-width: 400px) {
+  h1 {
+    font-size: 2.75em;
+  }
+
+  footer h3 {
+    font-size: 1.25em;
+  }
+  footer h4 {
+    font-size: 1em;
+  }
+}
+@media (min-width: 500px) {
   header {
-    height: 40vh;
+    height: 30vh;
+  }
+
+  .home-nav {
+    padding: 0.5em;
+  }
+
+  .nav-link {
+    padding: 0.25em;
+    margin: 0.25em auto;
+  }
+
+  .nav-link a {
+    font-size: 1.25em;
+  }
+  
+  h1 {
+    font-size: 3.25em;
+  }
+
+  footer {
+    padding: 0.75em;
+    text-align: left;
+  }
+
+  footer > * {
+    text-align: left;
+    padding: 5px 0 5px 15%;
+  }
+
+  footer h3 {
+    font-size: 1.75em;
+  }
+
+  footer h4 {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 620px) {
+  header {
+    justify-content: flex-start;
   }
   
   h1 {
     font-size: 4em;
+    padding-left: 15%;
   }
+
+  .nav-link a {
+    font-size: 1.5em;
+  }
+
+  footer {
+    padding: 1em;
+  }
+
+  footer h3 {
+    font-size: 2em;
+  }
+
+  footer h4 {
+    font-size: 1.75em;
+  }
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 5.25em;
+  }
+
+  .nav-link a {
+    font-size: 2em;
+  }
+
+  .home-nav {
+    z-index: 1; /*fixes small issue with wide screens cutting off the nav content*/
+  }
+
+  footer h3 {
+    font-size: 2.5em;
+  }
+
+  footer h4 {
+    font-size: 2em;
+  }
+
 }
   

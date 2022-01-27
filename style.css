@@ -31,7 +31,7 @@ h1 {
 }
 
 h3 {
-  font-size: 0.75em;
+  font-size: 1.5em;
 }
 
 h4 {
@@ -61,11 +61,11 @@ header, nav, footer {
   place-items: center;
 }
 
-.nav-link {
+#nav-link-list .nav-link {
   font-size: 1em;
   margin: 0.5em auto;
   padding: 0.5em;
-  line-height: 2em;
+  /* line-height: 2em; */
   transition: transform .3s;
 }
 
@@ -84,12 +84,11 @@ header, nav, footer {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
 .sub-page-nav .nav-link {
-  font-size: 1em;
   display: inline;
 }
 
@@ -133,11 +132,30 @@ main {
   background: linear-gradient(0deg, silver, whitesmoke, silver);
   border: 2px solid #222222;
   border-radius: 10px;
-  box-shadow: grey 2px 2px 2px;
+  box-shadow: black -2px 2px 2px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .card > * {
-  margin: 5px;
+  flex-basis: 100%;
+}
+
+.project-title {
+  font-weight: bold;
+  color:rgb(33, 33, 92);
+  text-shadow: whiteblack 3px 3px 0px;
+}
+
+.card > img {
+  flex-basis: 60%;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  object-position: top;
 }
 
 .card:hover {
@@ -149,8 +167,8 @@ main {
 }
 
 .open-card > * {
-  display: inline-block;
-
+  display: block;
+  flex-basis: 100%;
 }
 
 footer {

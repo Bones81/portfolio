@@ -111,8 +111,10 @@ main {
   display: inline-block;
 }
 
-#resume-main {
-  max-height: 90vh;
+#resume-main img {
+  margin: 10px auto;
+  max-height: 1000px;
+  max-width: 95%;
 }
 
 #projects-main {

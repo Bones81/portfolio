@@ -39,7 +39,7 @@ nav {
 
 .nav-link {
   font-size: 1em;
-  margin: 1em auto;
+  margin: 0.5em auto;
   padding: 0.5em;
   line-height: 2em;
   transition: transform .3s;
@@ -79,6 +79,7 @@ main {
 
 #bio-main {
   width: 80%;
+  padding: 0.5em;
 }
 
 #bio-main img, #bio-main article {

@@ -17,10 +17,10 @@ $(() => {
       liveLink: 'https://bones81.github.io/template_actor_website/',
       gitHubLink: 'https://github.com/Bones81/template_actor_website',
       picURL: 'img/Actor_Website_screenshot.png',
-      blurb: 'An actor website, with photos, videos, email/comment form, and contact page.'
+      blurb: 'An actor website (incomplete), with photos, videos, email/comment form, and contact page.'
     },
     { 
-      name: 'Hong Kong Disneyland Caroler Info Page',
+      name: 'HKDL Caroler Info',
       type: 'HTML/CSS',
       liveLink: 'https://bones81.github.io/HKDLCarolerInfo/',
       gitHubLink: 'https://github.com/Bones81/HKDLCarolerInfo',
@@ -57,7 +57,7 @@ $(() => {
       liveLink: 'https://bones81.github.io/SpaceInvaders/',
       gitHubLink: 'https://github.com/Bones81/SpaceInvaders',
       picURL: 'img/Space_Invaders_screenshot.png',
-      blurb: 'Vanilla JS grid-based game. Who knew colored squares could be so threatening? Fire with space bar. Move left or right with the left/right arrows on your keyboard.'
+      blurb: 'Vanilla JS grid-based game. Who knew colored circles could be so threatening? Fire with space bar. Move left or right with the left/right arrows on your keyboard.'
     },
     { 
       name: 'Connect 4',

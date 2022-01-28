@@ -61,7 +61,7 @@ header, nav, footer {
   place-items: center;
 }
 
-#nav-link-list .nav-link {
+.nav-link {
   font-size: 1em;
   margin: 0.5em auto;
   padding: 0.5em;
@@ -76,7 +76,7 @@ header, nav, footer {
 .nav-link a {
   color: rgb(238, 238, 238);
   text-decoration: none;
-  text-shadow: white -1px 1px 20px;
+  text-shadow: white -1px 1px 20px; /* cool soft focus effect on links */
 }
 
 .sub-page-nav {
@@ -101,22 +101,39 @@ main {
   margin: 1em auto;
 }
 
+/* BIO PAGE */
 #bio-main {
-  width: 80%;
-  padding: 0.5em;
+  width: 90%;
+  padding: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+  align-items: center;
+}
+
+#bio-main h3 {
+  font-weight: bold;
+  font-size: 2em;
+  font-style: italic;
 }
 
 #bio-main img, #bio-main article {
-  width: 45%;
-  display: inline-block;
+  max-height: 90%;
+  max-width: 90%;
+  display: inline;
+  object-fit: contain;
+  object-position: bottom;
+  text-align: justify;
 }
 
+/* RESUME PAGE */
 #resume-main img {
   margin: 10px auto;
   max-height: 1000px;
   max-width: 95%;
 }
 
+/* PROJECTS PAGE */
 #projects-main {
   display: flex;
   flex-wrap: wrap;
@@ -173,6 +190,120 @@ main {
   flex-basis: 100%;
 }
 
+/* LINKS PAGE */
+#links-main {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5em;
+  justify-content: stretch;
+  align-items: center;
+  align-content: space-around;
+}
+
+#links-main div {
+  flex-grow: 1;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 1em;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1em;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#links-main img {
+  max-width: 50%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  box-shadow: white -2px 2px 2px;
+}
+
+#links-main ul {
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+}
+
+#links-main li, #links-main h5 {
+  padding: 0.75em;
+  font-weight: 700;
+  color:rgb(33, 33, 92)
+}
+
+#links-main h5 {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border: 1px solid rgba(33, 33, 92, 0.7);
+  background-color: rgb(85, 85, 250);
+  border-radius: 5px;
+  box-shadow: rgb(33, 33, 92) -2px 2px 5px;
+  margin-bottom: 0.5em;
+}
+
+#links-main li {
+  transition: transform .3s;
+}
+
+#links-main li:hover {
+  transform: scale(1.25);
+}
+
+#links-main a {
+  text-decoration: none;
+  color:rgb(33, 33, 92)
+}
+
+/* CONTACT PAGE */
+#contact-main {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+  padding: 1em;
+  align-items: center;
+}
+
+#contact-main h3 {
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#contact-main img {
+  max-width: 90vw;
+  box-shadow: white -2px 2px 2px;
+  border-radius: 5px;
+}
+
+#contact-main div {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+hr {
+  width: 90%;
+}
+
+#contact-main h5 {
+  align-self: center;
+}
+
+#contact-main div > * {
+  margin: 0.5em 0;
+}
+
+#contact-main textarea {
+  width: 90%;
+}
+
+#contact-main input {
+
+}
+
+/* FOOTER */
 footer {
   padding: 0.5em;
   border-top: white solid 0.125em;
@@ -216,9 +347,25 @@ footer h3 {
     font-size: 1em;
   }
 }
+
+@media (min-width: 430px) {
+  #bio-main {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-evenly;
+  }
+
+  #bio-main img, #bio-main article {
+    width: 45%;
+  }
+}
 @media (min-width: 500px) {
   header {
-    height: 30vh;
+    height: 25vh;
+  }
+  
+  h1 {
+    font-size: 3.25em;
   }
 
   .home-nav {
@@ -234,8 +381,27 @@ footer h3 {
     font-size: 1.25em;
   }
   
-  h1 {
-    font-size: 3.25em;
+  #links-main {
+    gap: 1em;
+  }
+
+  #links-main img {
+    max-width: 25%;
+  }
+
+  #links-main div {
+    font-size: 1em;
+    padding: 1em;
+    flex-flow: row wrap;
+  }
+
+  #links-main ul {
+    max-width: 40%;
+
+  }
+
+  #contact-main img {
+    max-width: 50vw;
   }
 
   footer {
@@ -268,6 +434,14 @@ footer h3 {
   }
 
   .nav-link a {
+    font-size: 1.5em;
+  }
+
+  #bio-main h3 {
+    flex-basis: 100%;
+  }
+
+  #links-main div {
     font-size: 1.5em;
   }
 

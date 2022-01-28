@@ -5,7 +5,7 @@ Technologies used: HTML, CSS, JavaScript, jQuery
 
 Approach taken: 
 
-Live site link: TO BE ADDED
+Live site link: http://www.nathanfreeman.com
 
 Installation Instructions: N/A
 

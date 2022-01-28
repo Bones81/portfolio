@@ -62,7 +62,7 @@ header, nav, footer {
 }
 
 .nav-link {
-  font-size: 1em;
+  font-size: 0.67em;
   margin: 0.5em auto;
   padding: 0.5em;
   /* line-height: 2em; */
@@ -90,7 +90,7 @@ header, nav, footer {
 
 .sub-page-nav .nav-link {
   display: inline;
-  padding: 0 1em;
+  padding: 0 0.5em;
   transition: transform .3s;
 }
 
@@ -130,7 +130,13 @@ main {
   display: inline;
   object-fit: contain;
   object-position: bottom;
+}
+
+#bio-main p {
   text-align: justify;
+  font-size: 1.125em;
+  padding: 0.5em 0;
+  line-height: 1.125em;
 }
 
 /* RESUME PAGE */
@@ -224,7 +230,6 @@ main {
   object-fit: cover;
   object-position: center;
   border-radius: 5px;
-  box-shadow: white -2px 2px 2px;
 }
 
 #links-main ul {
@@ -280,7 +285,6 @@ main {
 
 #contact-main img {
   max-width: 90vw;
-  box-shadow: white -2px 2px 2px;
   border-radius: 5px;
 }
 
@@ -388,7 +392,7 @@ footer h3 {
   }
 
   #links-main img {
-    max-width: 25%;
+    max-width: 40%;
   }
 
   #links-main div {
@@ -445,6 +449,10 @@ footer h3 {
 
   #bio-main img {
     max-width: 30%;
+  }
+
+  #bio-main p {
+    font-size: 1.25em;
   }
 
   #links-main div {

@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Red+Hat+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@viewport {
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
+@-ms-viewport {
+  zoom: 1;
+  width: extend-to-zoom;
+}
+
+
 body {
   box-sizing: border-box;
   text-align: center;
@@ -62,7 +73,7 @@ header, nav, footer {
 }
 
 .nav-link-list {
-  height: 90%;
+  max-height: 90%;
   display: grid;
   justify-items: center;
   align-content: space-around;

@@ -50,7 +50,7 @@ header, nav, footer {
 }
 
 .home-nav {
-  min-width: 40vw;
+  min-width: 48vw;
   min-height: 40vh;
   margin: auto;
   padding: 0.5em;
@@ -61,16 +61,11 @@ header, nav, footer {
   place-items: center;
 }
 
-.nav-link {
-  font-size: 0.67em;
-  margin: 0.5em auto;
-  padding: 0.5em;
-  /* line-height: 2em; */
-  transition: transform .3s;
-}
-
-.nav-link:hover {
-  transform: scale(2);
+.nav-link-list {
+  height: 90%;
+  display: grid;
+  justify-items: center;
+  align-content: space-around;
 }
 
 .nav-link a {
@@ -84,7 +79,7 @@ header, nav, footer {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: center; /* only centers the nav-link-list */
+  justify-content: center; /* only centers the sub-nav */
   align-items: center;
   z-index: 999;
 }
@@ -93,10 +88,21 @@ header, nav, footer {
   display: inline;
   padding: 0 0.5em;
   transition: transform .3s;
-  
 }
 
 .sub-page-nav .nav-link {
+  transform: scale(2);
+}
+
+.nav-link {
+  font-size: 1em;
+  margin: 0.5em auto;
+  padding: 0.5em;
+  /* line-height: 2em; */
+  transition: transform .3s;
+}
+
+.nav-link:hover {
   transform: scale(2);
 }
 

@@ -161,7 +161,9 @@ $(() => {
     $name.val('')
     $email.val('')
     $message.val('')
-    window.location.href = link // this reopens the current window to the mailto url that was just built by the function
+    // window.location.href = link // this reopens the current window to the mailto url that was just built by the function
+
+    window.open(link, '_blank')
   })
 
 })

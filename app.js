@@ -145,4 +145,20 @@ $(() => {
 
   }
 
+  // Used the following search result to help code the basic email comment form:
+  // https://www.codegrepper.com/code-examples/javascript/javascript+to+send+email+on+button+click
+
+  $('#submit-btn').on('click', () => {
+    const $name = $('#name-input').val()
+    const $email = $('#email-input').val()
+    const $message = $('#comment-box').val()
+
+    const link = "mailto:nathanlfreeman@gmail.com"
+              //  + `?cc=${$email}` // this line only adds the user's own email to the cc field. 
+               + "&subject=" + encodeURIComponent("Comment from " + $name)
+               + "&body=" + encodeURIComponent($message);
+
+    window.location.href = link // this reopens the current window to the mailto url that was just built by the function
+  })
+
 })

@@ -7,6 +7,8 @@
   <title>Nate Codes - Contact</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="app.js"></script>
 </head>
@@ -28,15 +30,15 @@
     <h3>Contact Info</h3>
     <img src="img/Nathan Waving HKDL 2016.jpg" alt="Nate performing in a red tuxedo">
     <div id="contact-info-container">
-      <p>Email: <a href="mailto:nathanlfreeman@gmail.com">NathanLFreeman@gmail.com</a></p>
+      <p>Email: <a href="mailto:nathanlfreeman@gmail.com" target="_blank">NathanLFreeman@gmail.com</a></p>
       <p>Phone: 212.517.8350</p>
-      <p>Snail Mail: 725 West 172nd Street, Apt 68, NYC 10032</p>
+      <p>Address: NYC 10032</p>
       <hr>
       <h5>Leave a Message!</h5>
       <textarea name="comment" id="comment-box" cols="30" rows="10" placeholder="Enter your message here."></textarea>
-      <input type="text" placeholder="Your name">
-      <input type="text" placeholder="Your email">
-      <input type="submit">
+      <h5>Your name: </h5><input id="name-input" type="text" placeholder="Your name">
+      <h5>Your email: </h5><input id="email-input" type="text" placeholder="Your email">
+      <input id="submit-btn" type="submit" value="Send Message">
     </div>
   </main>
   <footer>

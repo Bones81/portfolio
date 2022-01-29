@@ -155,12 +155,12 @@ $(() => {
 
     const link = "mailto:nathanlfreeman@gmail.com"
               //  + `?cc=${$email}` // this line only adds the user's own email to the cc field. 
-               + "&subject=" + encodeURIComponent("Comment from " + $name.val())
+               + "?subject=" + encodeURIComponent("Comment from " + $name.val())
                + "&body=" + encodeURIComponent($message.val());
 
     $name.val('')
     $email.val('')
-    $message.val('Enter a new message')
+    $message.val('')
     window.location.href = link // this reopens the current window to the mailto url that was just built by the function
   })
 

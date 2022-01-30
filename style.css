@@ -173,13 +173,14 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
+  padding: 25px;
   justify-content: center;
   align-items: flex-start;
 
 }
 
 .card {
-  margin: 10px 0;
+  margin: 0;
   padding: 5px;
   /* width: 85vw; */
   flex-basis: 250px;
@@ -206,9 +207,9 @@ main {
 
 .open-card img {
   min-height: 100px;
-  max-height: 95%;
+  max-height: 200px;
   min-width: 100px;
-  max-width: 95%;
+  max-width: 200px;
   object-fit: cover;
   object-position: top;
   box-shadow: grey -2px 2px 2px;
@@ -258,7 +259,7 @@ button {
   top: 0;
   left: 0;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-content: center;
   gap: 1em; 
@@ -453,6 +454,15 @@ footer h3 {
   #bio-main img, #bio-main article {
     width: 45%;
   }
+
+  .open-card {
+    flex-flow: row wrap;
+  }
+
+  .open-card > div {
+    flex-basis: 80%;
+  }
+
 }
 @media (min-width: 500px) {
   header {
@@ -476,6 +486,15 @@ footer h3 {
     font-size: 1.25em;
   }
   
+  .open-card img {
+    max-height: 40vh;
+    max-width: 30vw;
+  }
+
+  .open-card > div {
+    flex-basis: 80%;
+  }
+
   .open-card .project-description {
     font-size: 1.25em;
   }
@@ -584,6 +603,19 @@ footer h3 {
 
   .home-nav {
     z-index: 1; /*fixes small issue with wide screens cutting off the nav content*/
+  }
+
+  .open-card {
+    flex-flow: row wrap;
+  }
+
+  .open-card > div {
+    flex-basis: 40%;
+  }
+
+  .open-card img {
+    max-height: 80%;
+    max-width: 80%;
   }
 
   footer h3 {

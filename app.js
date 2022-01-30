@@ -120,27 +120,38 @@ $(() => {
   const $projects = $('#projects-main')
   for (const proj of projects) {
     const $card = $('<div>').addClass('card') //create a card div to house the project info, start with class card
+    // const $bigCard = $('<div>').addClass('big-card') //create card to house the expanded version of the project
+    const $subDiv1 = $('<div>').addClass('project-sub-div-1')
+    const $subDiv2 = $('<div>').addClass('project-sub-div-2')
     const $h3 = $('<h3>').addClass('project-title').text(`${proj.name}`) // build the card heading 
     const $h5 = $('<h5>').addClass('project-type').text(proj.type) // build the text that notes app type
     const $img = $('<img>').addClass('project-img').attr('src',`${proj.picURL}`) // build the img for the project card
     const $p = $('<p>').addClass('project-description').text(`${proj.blurb}`) // build the text blurb
     const $btn1 = $('<button>').addClass('live-link') // build the buttons
     const $btn2 = $('<button>').addClass('github-link')
+    const $exitBtn = $('<button>').addClass('exit-btn').text('Back to Projects')
     const $a1 = $('<a>').attr('href',`${proj.liveLink}`).attr('target','_blank').text(`Live Link`) // build the links that go in the buttons
     const $a2 = $('<a>').attr('href',`${proj.gitHubLink}`).attr('target','_blank').text(`Github Link`)
 
     $btn1.append($a1) // put anchor links inside buttons
-    $btn2.append($a2)
+    $btn2.append($a2) // but this doesn't make the entire button activate the link, only the <a> tag text, so...
+    $btn1.on('click', () => {
+      window.open(proj.liveLink, '_blank') // see #submit-btn logic below for source on this syntax
+    })
+    $btn2.on('click', () => {
+      window.open(proj.gitHubLink, '_blank')
+    })
     
     if (proj.type === 'Ruby') { // I put this here because I don't know how to make a live running Ruby program accessible via link
       $btn1.hide()
     }
 
-    $card.append($h3, $h5, $img, $p, $btn1, $btn2) // append all components to the card
-
+    $subDiv1.append($h3, $h5, $img) 
+    $subDiv2.append($p, $btn1, $btn2) 
+    $card.append($subDiv1, $subDiv2, $exitBtn) // append all components to the card
     $('#projects-main').append($card)
     $card.on('click', () => {
-      $card.toggleClass('open-card')
+      $card.toggleClass('open-card') // when clicking card in list of projects, activate the open-card version 
     })
 
   }
@@ -161,8 +172,7 @@ $(() => {
     $name.val('')
     $email.val('')
     $message.val('')
-    // window.location.href = link // this reopens the current window to the mailto url that was just built by the function
-
+    // window.location.href = link // this reopens the current window to the mailto url that was just built by the function. Instead we want it to open in a new tab with the following line:
     window.open(link, '_blank')
   })
 

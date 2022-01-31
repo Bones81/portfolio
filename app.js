@@ -1,7 +1,6 @@
 $(() => {
-  //////////// Travel Images Carousel script /////////////////
+  // Travel Images Carousel script /////////////////
 
-  
   let currentCarouselImgIdx = 0;
   let numImages = $('.carousel-images').children().length - 1
   console.log(numImages)
@@ -148,8 +147,9 @@ $(() => {
   for (const proj of projects) {
     const $card = $('<div>').addClass('card') //create a card div to house the project info, start with class card
     // const $bigCard = $('<div>').addClass('big-card') //create card to house the expanded version of the project
-    const $subDiv1 = $('<div>').addClass('project-sub-div-1')
-    const $subDiv2 = $('<div>').addClass('project-sub-div-2')
+    const $openCardContent = $('<div>').addClass('open-card-content')
+    const $subDiv1 = $('<div>').addClass('project-sub-div project-sub-div-1')
+    const $subDiv2 = $('<div>').addClass('project-sub-div project-sub-div-2')
     const $h3 = $('<h3>').addClass('project-title').text(`${proj.name}`) // build the card heading 
     const $h5 = $('<h5>').addClass('project-type').text(proj.type) // build the text that notes app type
     const $img = $('<img>').addClass('project-img').attr('src',`${proj.picURL}`) // build the img for the project card
@@ -175,8 +175,9 @@ $(() => {
 
     $subDiv1.append($h3, $h5, $img) 
     $subDiv2.append($p, $btn1, $btn2) 
-    $card.append($subDiv1, $subDiv2, $exitBtn) // append all components to the card
-    $('#projects-main').append($card)
+    $openCardContent.append($subDiv1, $subDiv2, $exitBtn) // append all components to the card
+    $card.append($openCardContent)
+    $('#projects-main').append($card) // append the fully assembled card to the main projects content area
     $card.on('click', () => {
       $card.toggleClass('open-card') // when clicking card in list of projects, activate the open-card version 
     })

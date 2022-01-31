@@ -88,6 +88,10 @@ header, nav, footer {
   text-shadow: white -1px 1px 20px; /* cool soft focus effect on links */
 }
 
+.home-nav .home-link {
+  display: none;
+}
+
 .sub-page-nav {
   height: 10vh;
   position: sticky;
@@ -171,7 +175,7 @@ main {
 }
 
 #carousel h2 {
-  font-size: 2.5em;
+  font-size: 1.5em;
   font-style: italic;
   font-weight: 700;
   text-transform: uppercase;
@@ -181,7 +185,7 @@ main {
 }
 
 .carousel-container {
-  width: 70%;
+  width: 95%;
   display: flex;
   justify-content: space-around;
 }
@@ -233,13 +237,34 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  padding: 25px;
+  padding: 1em;
   justify-content: center;
   align-items: flex-start;
+}
+
+#projects-main h2, #projects-main h4 {
+  flex-basis: 100%;
+}
+
+#projects-main h2 {
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  color:rgb(37, 37, 37);
+  text-shadow: rgb(114, 170, 189) -1px 1px;
+}
+
+#projects-main h4 {
+  font-size: 0.8em;
+  border-bottom: black 2px solid;
+  padding-bottom: 1em;
+  margin: 0 10%;
 
 }
 
-.card {
+/* Managing the cards and the modal open-card state */
+.card { /* initial state, should just show project title and type */
   margin: 0;
   padding: 5px;
   /* width: 85vw; */
@@ -248,21 +273,25 @@ main {
   border: 2px solid #222222;
   border-radius: 10px;
   box-shadow: black -2px 2px 2px;
-  display: flex;
+  /* display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
-  gap: 5px;
+  align-items: center; */
+  /* gap: 5px; */
 }
 
-.card > * {
+.open-card-content > * {
   flex-basis: 100%;
 }
 
 .project-title {
   font-weight: bold;
   color:rgb(33, 33, 92);
-  text-shadow: whiteblack 3px 3px 0px;
+  text-shadow: white -1px 1px;
+}
+
+.project-description {
+  font-size: 1.25em;
 }
 
 .open-card img {
@@ -281,11 +310,27 @@ main {
 }
 
 .live-link, .github-link {
+  font-family: 'Josefin Sans', sans-serif;
   border-radius: 5px;
-  background-color: silver;
-  color: navy;
-  padding: 1em 2em;
+  padding: 0.5em 1em;
   font-size: 1em;
+  margin: 0 20%;
+}
+
+.live-link {
+  background-color: rgb(24, 170, 24);
+}
+
+.live-link a {
+  color: navy;
+}
+
+.github-link {
+  background-color:rgb(37, 37, 37);
+}
+
+.github-link a {
+  color: silver;
 }
 
 .live-link:visited, .github-link:visited {
@@ -293,13 +338,17 @@ main {
 }
 
 .exit-btn {
-  padding: 1em;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 0.5em;
   min-width: 10vw;
-  font-size: 1em;
+  max-width: 50vw;
+  font-size: 1.25em;
   background: linear-gradient(10deg, blue, silver);
+  border-radius: 25px;
+  color:rgb(238, 238, 238);
 }
 
-button {
+#projects-main button {
   cursor: pointer;
 }
 
@@ -308,39 +357,58 @@ button {
 }
 
 .open-card {
-  min-width: 50vw;
-  max-width: 100vw;
-  min-height: 95vh;
-  max-height: 100vh;
-  z-index: 9999;
-  background: linear-gradient(0deg, silver, whitesmoke, silver);
-  padding: 1.5em;
+  background: rgba(0,0,0,0.4);
+  height: 100%;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-content: center;
-  gap: 1em; 
+  z-index: 9999;
+  overflow: auto;
 }
 
-.open-card > div, .open-card > button {
-  flex-basis: 40%;
+.open-card-content > * {
+  flex-basis: 100%;
+}
+
+.open-card > .open-card-content {
   display: flex;
-  flex-flow: column nowrap;
-  gap: 1em;
-  padding: .5em;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
+  gap: 1em; 
+  height: 80vh;
+  width: 80vw;
+  background: linear-gradient(0deg, silver, whitesmoke, silver);
+  box-shadow: rgb(37, 37, 37) -2px 2px;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 5% auto;
 }
 
-.open-card * {
+.open-card .project-sub-div { /* handles display of sub divs when card open */
+  display: flex;
+}
+
+.open-card button, .open-card .project-sub-div * { /* handles display of buttons when card open. Also handles display of all sub div elements when card open */
   display: block;
 }
 
-.open-card:hover {
+.open-card-content:hover {
   cursor: default;
+}
+
+.project-sub-div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 0.5em;
+  align-content: space-between;
+}
+
+.project-sub-div > * {
+  flex-basis: 100%;
 }
 
 /* LINKS PAGE */
@@ -515,11 +583,11 @@ footer h3 {
     width: 45%;
   }
 
-  .open-card {
+  .open-card-content {
     flex-flow: row wrap;
   }
 
-  .open-card > div {
+  .open-card-content > div {
     flex-basis: 80%;
   }
 
@@ -551,7 +619,7 @@ footer h3 {
     max-width: 30vw;
   }
 
-  .open-card > div {
+  .open-card-content > div {
     flex-basis: 80%;
   }
 
@@ -665,11 +733,11 @@ footer h3 {
     z-index: 1; /*fixes small issue with wide screens cutting off the nav content*/
   }
 
-  .open-card {
+  .open-card-content {
     flex-flow: row wrap;
   }
 
-  .open-card > div {
+  .open-card-content > div {
     flex-basis: 40%;
   }
 

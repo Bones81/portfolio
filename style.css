@@ -146,7 +146,7 @@ main {
   font-style: italic;
 }
 
-#bio-main img, #bio-main article {
+.about-pic, #bio-main article {
   max-height: 90%;
   max-width: 90%;
   display: inline;
@@ -159,6 +159,66 @@ main {
   font-size: 1.125em;
   padding: 0.5em 0;
   line-height: 1.125em;
+}
+
+/* CAROUSEL SECTION OF BIO */
+#carousel {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
+}
+
+#carousel h2 {
+  font-size: 2.5em;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5em;
+  border-bottom: black 1px solid;
+  text-shadow: white -1px 1px;
+}
+
+.carousel-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.carousel-images {
+  width: 80%;
+  background:rgb(149, 149, 204);
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: rgb(37, 37, 37) 2px 2px;
+}
+
+.carousel-images img {
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+  /* object-fit: cover;
+  object-position: center; */
+}
+
+.carousel-images img:first-of-type {
+  display: block;
+}
+
+.carousel-button {
+  align-self: center;
+  color: rgb(37, 37, 37);
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgb(37, 37, 37) 1px 1px;
+}
+
+.carousel-button:hover {
+  cursor: pointer;
+  background: rgb(85, 85, 250);
+  box-shadow: rgb(85, 85, 250) 1px 1px;
 }
 
 /* RESUME PAGE */
@@ -451,7 +511,7 @@ footer h3 {
     align-content: space-evenly;
   }
 
-  #bio-main img, #bio-main article {
+  .about-pic, #bio-main article {
     width: 45%;
   }
 
@@ -567,7 +627,7 @@ footer h3 {
     flex-basis: 100%;
   }
 
-  #bio-main img {
+  .about-pic {
     max-width: 30%;
   }
 

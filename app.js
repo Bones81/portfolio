@@ -1,4 +1,31 @@
 $(() => {
+  //////////// Travel Images Carousel script /////////////////
+
+  
+  let currentCarouselImgIdx = 0;
+  let numImages = $('.carousel-images').children().length - 1
+  console.log(numImages)
+  
+  $('.next').on('click', () => {
+    $('.carousel-images').children().eq(currentCarouselImgIdx).css('display', 'none')
+    if (currentCarouselImgIdx < numImages) {
+      currentCarouselImgIdx++
+    } else {
+      currentCarouselImgIdx = 0
+    }
+    $('.carousel-images').children().eq(currentCarouselImgIdx).css('display', 'block')
+  })
+
+  $('.previous').on('click', () => {
+    $('.carousel-images').children().eq(currentCarouselImgIdx).css('display', 'none')
+    if (currentCarouselImgIdx > 0) {
+      currentCarouselImgIdx--
+    } else {
+      currentCarouselImgIdx = numImages - 1
+    }
+    $('.carousel-images').children().eq(currentCarouselImgIdx).css('display', 'block')
+  })
+  
   
   //have array of projects such that you can populate a new project-card for each project by simply adding the project details to the project array!
   

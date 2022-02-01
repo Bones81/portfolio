@@ -378,8 +378,8 @@ main {
   align-items: center;
   align-content: center;
   gap: 1em; 
-  height: 80vh;
-  width: 80vw;
+  height: 85vh;
+  width: 85vw;
   background: linear-gradient(0deg, silver, whitesmoke, silver);
   box-shadow: rgb(37, 37, 37) -2px 2px;
   border-radius: 1em;
@@ -622,19 +622,20 @@ footer h3 {
   }
 
   .open-card-content > div {
-    flex-basis: 80%;
+    flex-flow: row wrap;
+    flex-basis: 35%;
   }
 
   .open-card .project-description {
-    font-size: 1.25em;
+    font-size: 1em;
   }
 
   .open-card .project-title {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .open-card .project-type {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 
   #links-main {
@@ -741,6 +742,18 @@ footer h3 {
 
   .open-card-content > div {
     flex-basis: 40%;
+  }
+
+  .open-card .project-description {
+    font-size: 1em;
+  }
+
+  .open-card .project-title {
+    font-size: 1.5em;
+  }
+
+  .open-card .project-type {
+    font-size: 1.25em;
   }
 
   .open-card img {

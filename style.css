@@ -590,8 +590,10 @@ footer h3 {
   .open-card-content > div {
     flex-basis: 80%;
   }
-
 }
+
+
+
 @media (min-width: 500px) {
   header {
     height: 25vh;
@@ -753,6 +755,6 @@ footer h3 {
   footer h4 {
     font-size: 2em;
   }
-
 }
+
   

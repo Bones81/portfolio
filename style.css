@@ -10,7 +10,6 @@
   width: extend-to-zoom;
 }
 
-
 body {
   box-sizing: border-box;
   text-align: center;
@@ -39,6 +38,13 @@ h1 {
   /* text-align: left; */
   /* padding-left: 15%; */
   text-shadow: darkblue 5px 2px 15px;
+  cursor: pointer;
+ 
+}
+
+h1 a {
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 h3 {

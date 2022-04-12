@@ -232,10 +232,37 @@ main {
 }
 
 /* RESUME PAGE */
-#resume-main img {
-  margin: 10px auto;
-  max-height: 1000px;
-  max-width: 95%;
+#resume-main {
+  width: 70%;
+  padding: 2em;
+}
+
+#resume-main h2 {
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5em;
+  /* border-bottom: black 1px solid; */
+  /* text-shadow: white -1px 1px; */
+}
+
+#resume-main ul {
+  padding: 0;
+}
+
+#resume-main h4 {
+  padding: 1em;
+}
+
+#resume-main li {
+  padding: 0.5em;
+}
+
+.element-div {
+  padding: 1em;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px black;
 }
 
 /* PROJECTS PAGE */
@@ -710,6 +737,10 @@ footer h3 {
 
   #bio-main p {
     font-size: 1.25em;
+  }
+
+  #resume-main {
+    width: 50%;
   }
 
   #links-main div {
